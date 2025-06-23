@@ -5,13 +5,16 @@ const resultsDiv = document.getElementById("results-div");
 
 const checkValidNumber = (input) => {
   if (input === "") {
-    alert("Please provide a phone number");
+    alert("Veuillez fournir un numéro de téléphone");
     return;
   }
+  resultsDiv.textContent = "";
+
   const countryCode = "^(1\\s?)?";
   const areaCode = "(\\([0-9]{3}\\)|[0-9]{3})";
   const spacesDashes = "[\\s\\-]?";
   const phoneNumber = "[0-9]{3}[\\s\\-]?[0-9]{4}$";
+
   const phoneRegex = new RegExp(
     `${countryCode}${areaCode}${spacesDashes}${phoneNumber}`,
   );
@@ -23,7 +26,7 @@ const checkValidNumber = (input) => {
     : (pTag.style.color = "#4d3800");
   pTag.appendChild(
     document.createTextNode(
-      `${phoneRegex.test(input) ? "Valid" : "Invalid"} US number: ${input}`,
+      `${phoneRegex.test(input) ? "Valide" : "Invalide"} numéro US : ${input}`,
     ),
   );
   resultsDiv.appendChild(pTag);

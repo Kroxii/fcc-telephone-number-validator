@@ -1,0 +1,166 @@
+/* Minimal, modern, accessible CSS for a clean telephone validator UI */
+
+:root {
+  --color-bg: #f7fafc;
+  --color-container: #fff;
+  --color-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+  --color-primary: #000000;
+  --color-primary-dark: #1e40af;
+  --color-heading: #22223b;
+  --color-label: #4b5563;
+  --color-input-border: #d1d5db;
+  --color-success: #059669;
+  --color-error: #b91c1c;
+  --color-btn: #000000;
+  --color-btn-text: #fff;
+  --color-btn-clear: #f1f5f9;
+  --color-btn-clear-text: #2563eb;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: var(--color-heading);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6878a9 0%, #839daf 100%);
+}
+
+.container {
+  background: var(--color-container);
+  border-radius: 16px;
+  box-shadow: var(--color-shadow);
+  padding: 32px 24px 24px 24px;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--color-heading);
+  letter-spacing: 0.5px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 1rem;
+  color: var(--color-label);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--color-input-border);
+  border-radius: 8px;
+  font-size: 1.08rem;
+  background: #f8fafc;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+
+.results {
+  min-height: 36px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.results-text {
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: var(--color-primary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.results-text.success {
+  background: #ecfdf5;
+  color: var(--color-success);
+}
+
+.results-text.error {
+  background: #fef2f2;
+  color: var(--color-error);
+}
+
+.button-section {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 0;
+  background: var(--color-btn);
+  color: var(--color-btn-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.07);
+}
+
+.btn:hover, .btn:focus {
+  background: var(--color-primary-dark);
+}
+
+.btn.clear {
+  background: var(--color-btn-clear);
+  color: var(--color-btn-clear-text);
+  border: 1.5px solid var(--color-primary);
+  box-shadow: none;
+}
+
+.btn.clear:hover, .btn.clear:focus {
+  background: #e0e7ef;
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 14px 2vw 10px 2vw;
+    max-width: 98vw;
+  }
+  h1 {
+    font-size: 1.25rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
